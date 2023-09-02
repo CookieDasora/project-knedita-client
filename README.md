@@ -2,4 +2,4 @@
 
 An open-source social media.
 
-You can find the backend-end [here](https://github.com/CookieDasora/project-knedita)
+You can find the back-end [here](https://github.com/CookieDasora/project-knedita)
