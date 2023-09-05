@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Knedita',
+  title: 'Home / Knedita',
   description: 'An open source social media',
   manifest: '/manifest.json',
   themeColor: '#1C1C1C',
@@ -13,11 +13,6 @@ export const metadata: Metadata = {
     title: 'Project Knedita',
     statusBarStyle: 'default',
     startupImage: '/images/splash.png',
-  },
-  twitter: {
-    title: 'Project Knedita',
-    description: 'An open source social media',
-    creator: '@Hackntosh',
   },
 }
 
