@@ -6,7 +6,7 @@ interface SidebarContentProps {
 
 export default function SidebarContents({ children }: SidebarContentProps) {
   return (
-    <nav className='space-y-2 p-3 leading-relaxed tracking-normal antialiased md:text-xs lg:text-lg'>
+    <nav className='space-y-2 p-2 leading-relaxed tracking-normal antialiased md:text-xs lg:text-lg'>
       {children}
     </nav>
   )

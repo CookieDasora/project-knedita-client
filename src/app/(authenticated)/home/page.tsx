@@ -5,7 +5,8 @@ import { isMobileDevice, isPwaInstalled } from '@/helpers/MobileDetection'
 import { Alert } from '@/components/Alert/index'
 import { CheckIcon, InfoCircledIcon } from '@radix-ui/react-icons'
 import { useSession } from 'next-auth/react'
-import Sidebar from '@/components/Sidebar/index'
+import Sidebar from '@/components/Navigation/index'
+import Post from '@/components/Post'
 
 export default function HomePage() {
   const [showAlert, setShowAlert] = useState(false)
@@ -28,8 +29,9 @@ export default function HomePage() {
     <main className='flex h-screen justify-between'>
       <Sidebar />
 
-      <div className='flex-1 bg-zinc-900'>Part 2</div>
-      <div className='hidden bg-blue-500 md:block md:flex-1'>Part 3</div>
+      <div className='w-full items-center justify-center bg-zinc-900'>
+        <Post />
+      </div>
 
       {showAlert && (
         <Alert.Root>

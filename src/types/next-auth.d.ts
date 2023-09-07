@@ -8,6 +8,8 @@ declare module 'next-auth' {
       profileImage?: string
       displayName?: string
       username: string
+      followers: number
+      following: number
       accessToken: string
     }
   }

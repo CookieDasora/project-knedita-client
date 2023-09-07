@@ -9,21 +9,21 @@ import SidebarButton from './SidebarButton'
 import SidebarPostButton from './SidebarPostButton'
 
 interface SidebarButtonProps {
-  onSubmit: () => void
+  onSubmit?: () => void
 }
 
 export default function SidebarButtons({ onSubmit }: SidebarButtonProps) {
   return (
     <>
-      <SidebarButton icon={HomeIcon} name='Home' onAction={onSubmit} />
+      <SidebarButton icon={HomeIcon} name='Home' />
       <SidebarButton
         icon={MagnifyingGlassIcon}
         name='Search'
         onAction={onSubmit}
       />
-      <SidebarButton icon={BellIcon} name='Notifications' onAction={onSubmit} />
-      <SidebarButton icon={PersonIcon} name='Profile' onAction={onSubmit} />
-      <SidebarButton icon={GearIcon} name='Settings' onAction={onSubmit} />
+      <SidebarButton icon={BellIcon} name='Notifications' />
+      <SidebarButton icon={PersonIcon} name='Profile' />
+      <SidebarButton icon={GearIcon} name='Settings' />
       <SidebarPostButton />
     </>
   )

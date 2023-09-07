@@ -14,7 +14,8 @@ import client from '@/helpers/Client'
 import axios from 'axios'
 import { useState } from 'react'
 import { Alert } from '@/components/Alert'
-import { CheckIcon, CrossCircledIcon, SymbolIcon } from '@radix-ui/react-icons'
+import { CheckIcon, CrossCircledIcon } from '@radix-ui/react-icons'
+import Loading from '@/components/Loading'
 
 type CreateUserFormData = z.infer<typeof CreateUserFormSchema>
 
@@ -102,13 +103,7 @@ export default function SignupPage() {
         </div>
       </div>
 
-      {loading && (
-        <div className='fixed inset-0 z-40 flex flex-col items-center justify-center backdrop-blur-sm'>
-          <div className='flex max-w-lg rounded-xl p-8 text-white shadow-lg'>
-            <SymbolIcon className='h-32 w-32 animate-spin text-violet-500' />
-          </div>
-        </div>
-      )}
+      {loading && <Loading />}
 
       {error && (
         <Alert.Root>

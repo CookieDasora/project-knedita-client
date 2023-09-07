@@ -39,6 +39,8 @@ export const options: NextAuthOptions = {
           profileImage: data.profileImage,
           displayName: data.displayName,
           username: data.username,
+          followers: data.followers,
+          following: data.following,
           accessToken: token.token,
         }
 
