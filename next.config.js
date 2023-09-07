@@ -12,7 +12,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'knedita-public.s3.localhost.localstack.cloud',
+        hostname: process.env.S3_BUCKET_HOSTNAME,
         port: '4566',
         pathname: '/**/**',
       },
