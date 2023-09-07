@@ -7,6 +7,17 @@ const withPWA = require('next-pwa')({
 })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'knedita-public.s3.localhost.localstack.cloud',
+        port: '4566',
+        pathname: '/**/**',
+      },
+    ],
+  },
+}
 
 module.exports = withPWA(nextConfig)

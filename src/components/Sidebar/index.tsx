@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SidebarRoot from './SidebarRoot'
-import Logo from '../Logo'
+import SidebarUserInfo from './SidebarUserInfo'
 import BottomBar from './BottomBar'
 import SidebarContents from './SidebarContent'
 import SidebarButtons from './SidebarButtons'
@@ -17,7 +17,7 @@ export default function Sidebar() {
     <>
       <BottomBar onSubmit={toggleSidebar} />
       <SidebarRoot isOpen={isSidebarOpen}>
-        <Logo />
+        <SidebarUserInfo />
         <div className='h-[0.5px] w-full bg-[#464646]'></div>
         <SidebarContents>
           <SidebarButtons onSubmit={toggleSidebar} />

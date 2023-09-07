@@ -14,7 +14,7 @@ import client from '@/helpers/Client'
 import axios from 'axios'
 import { useState } from 'react'
 import { Alert } from '@/components/Alert'
-import { CheckIcon, CrossCircledIcon } from '@radix-ui/react-icons'
+import { CheckIcon, CrossCircledIcon, SymbolIcon } from '@radix-ui/react-icons'
 
 type CreateUserFormData = z.infer<typeof CreateUserFormSchema>
 
@@ -27,12 +27,14 @@ export default function SignupPage() {
     resolver: zodResolver(CreateUserFormSchema),
   })
 
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/home'
 
   const onSubmit = async (user: CreateUserFormData) => {
+    setLoading(true)
     try {
       await client.post('/user/signup', {
         username: user.username,
@@ -40,6 +42,7 @@ export default function SignupPage() {
         password: user.password,
       })
       signIn(undefined, { callbackUrl })
+      setLoading(false)
     } catch (e) {
       if (axios.isAxiosError(e)) {
         setError(e.response?.data.error)
@@ -98,6 +101,14 @@ export default function SignupPage() {
           </Form.Root>
         </div>
       </div>
+
+      {loading && (
+        <div className='fixed inset-0 z-40 flex flex-col items-center justify-center backdrop-blur-sm'>
+          <div className='flex max-w-lg rounded-xl p-8 text-white shadow-lg'>
+            <SymbolIcon className='h-32 w-32 animate-spin text-violet-500' />
+          </div>
+        </div>
+      )}
 
       {error && (
         <Alert.Root>
